@@ -1,0 +1,53 @@
+<head>
+    <meta charset="utf-8">
+    <title>Display Webcam Stream</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+    #container {
+        margin: 0px auto;
+        width: 500px;
+        height: 375px;
+        border: 10px #333 solid;
+    }
+    #videoElement {
+        width: 500px;
+        height: 375px;
+        background-color: #666;
+    }
+    </style>
+    </head>
+     
+    <body>
+        <center>
+            <div id="colored-box">
+            <h4 style="opacity: 0.7;">Made by: Minh-Hieu La (mlafamily.com)</h4>
+        <h1 style="color:darkorange;">Simple Webcam Website</h1>
+        <h3 style="color:black;">for those who don't have a mirror</h3>
+        <br>
+    </div>
+    <br>
+    <div id="container">
+        <video autoplay="true" id="videoElement">
+        
+        </video> 
+    <br><hr style="background-color:darkslateblue;"><br>
+</div>
+    <h3>PS: This website only works for certain browsers, for example, Chrome, Firefox, Microsoft Explorer, etc...</h3>
+    <script>
+     var video = document.querySelector("#videoElement");
+
+    if (navigator.mediaDevices.getUserMedia) {
+     navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function (stream) {
+      video.srcObject = stream;
+    })
+    .catch(function (err0r) {
+      console.log("Something went wrong!");
+    });
+}
+    </script>
+    </center>
+    </body>
